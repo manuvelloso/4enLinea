@@ -23,7 +23,35 @@ namespace _4enLinea
 
         private void JuegoForm_Load(object sender, EventArgs e)
         {
+            PrintTable();
+            txt_turn.Text = "Jugador "+ Players[0].username + " elija una posición.";
+        }
+        
+        void PrintTable()
+        {
+            dtg_tbl.ColumnCount = 8; //TODO: poner constantes en globales
+            dtg_tbl.RowCount = 8;
+            
+            for (int i = 0; i < 8; ++i)
+            {
+                for (int j = 0; j < 8; ++j)
+                {
+                    DataGridViewImageCell iCell = new DataGridViewImageCell();                               
+                    iCell.Value = (Bitmap)Image.FromFile("sin_pieza.png");
+
+                    dtg_tbl[i, j] = iCell;
+                }
+            }
+        }
+
+        private void btn_endgame_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+            main_parent.Show();
 
         }
+
+
     }
 }
