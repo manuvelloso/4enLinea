@@ -14,6 +14,7 @@ namespace _4enLinea
     {
         Form main_parent;
         List<User> Players;
+        int turn;
         public JuegoForm(Form main, List<User> users)
         {
             main_parent = main;
@@ -24,7 +25,9 @@ namespace _4enLinea
         private void JuegoForm_Load(object sender, EventArgs e)
         {
             PrintTable();
-            txt_turn.Text = "Jugador "+ Players[0].username + " elija una posición.";
+            turn = Players.Count;
+            txt_turn.Text = "Jugador "+ Players[turn - 1].username + " elija una posición.";
+            
         }
         
         void PrintTable()
@@ -52,6 +55,23 @@ namespace _4enLinea
 
         }
 
+        void Position()
+        {
 
+        }
+
+        private void dtg_tbl_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+        void ChangeImage()
+        {
+            if (turn == 1)
+                dtg_tbl.CurrentCell.Value = (Bitmap)Image.FromFile("con_pieza_roja.png");
+            else if (turn == 2)
+                dtg_tbl.CurrentCell.Value = (Bitmap)Image.FromFile("con_pieza_azul.png");
+            else
+                dtg_tbl.CurrentCell.Value = (Bitmap)Image.FromFile("sin_pieza.png");
+        }
     }
 }

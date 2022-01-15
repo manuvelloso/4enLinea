@@ -29,7 +29,7 @@ namespace _4enLinea
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_tbl = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -51,8 +51,8 @@ namespace _4enLinea
             this.dtg_tbl.AllowUserToDeleteRows = false;
             this.dtg_tbl.AllowUserToResizeColumns = false;
             this.dtg_tbl.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dtg_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dtg_tbl.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dtg_tbl.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtg_tbl.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.Disable;
             this.dtg_tbl.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -86,6 +86,7 @@ namespace _4enLinea
             this.dtg_tbl.Size = new System.Drawing.Size(403, 403);
             this.dtg_tbl.TabIndex = 0;
             this.dtg_tbl.TabStop = false;
+            this.dtg_tbl.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_tbl_CellClick);
             // 
             // Column1
             // 
